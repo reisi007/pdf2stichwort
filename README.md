@@ -2,6 +2,7 @@
 
 [Docker image](https://github.com/users/reisi007/packages/container/package/pdf2stichwort)
 
+
 This project uses [Gradle](https://gradle.org/).
 To build and run the application, use the *Gradle* tool window by clicking the Gradle icon in the right-hand toolbar,
 or run it directly from the terminal:
@@ -10,6 +11,7 @@ or run it directly from the terminal:
 * Run `./gradlew build` to only build the application.
 * Run `./gradlew check` to run all checks, including tests.
 * Run `./gradlew clean` to clean all build outputs.
+* Run  `docker build -t pdf2stichwort .` to build the Docker image
 
 Note the usage of the Gradle Wrapper (`./gradlew`).
 This is the suggested way to use Gradle in production projects.

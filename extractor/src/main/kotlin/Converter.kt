@@ -5,7 +5,7 @@ fun SoccerInfo.toPhotomachanics(appendable: Appendable) {
 }
 
 
-fun SoccerInfo.write(writer: Writer): Unit = with(writer) {
+private fun SoccerInfo.write(writer: Writer): Unit = with(writer) {
     val homeCode = Codes.getCodeByName(home.name)
     val awayCode = Codes.getCodeByName(away.name)
     appendComment("Basis Informationen")
@@ -27,14 +27,14 @@ fun SoccerInfo.write(writer: Writer): Unit = with(writer) {
 }
 
 
-fun GeneralInfo.write(writer: Writer) = with(writer) {
+private fun GeneralInfo.write(writer: Writer) = with(writer) {
     appendLine("stadion", arena)
     appendLine("typ", type)
     appendLine("datum", date)
 }
 
 
-fun TeamInfo.write(writer: Writer, prefix: String) = with(writer) {
+private fun TeamInfo.write(writer: Writer, prefix: String) = with(writer) {
     appendComment("Team")
     appendLine(prefix, name)
     appendLine("${prefix}t", trainer)
@@ -44,7 +44,7 @@ fun TeamInfo.write(writer: Writer, prefix: String) = with(writer) {
 }
 
 
-fun OfficialInfo.write(writer: Writer) = with(writer) {
+private fun OfficialInfo.write(writer: Writer) = with(writer) {
     appendComment("Officials")
     appendLine("r1", referee)
 

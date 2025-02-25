@@ -23,3 +23,4 @@ include(":app")
 include(":extractor")
 
 rootProject.name = "pdf2stichwort"
+include("email")

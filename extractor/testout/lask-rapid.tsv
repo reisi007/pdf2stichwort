@@ -1,0 +1,93 @@
+// Basis Informationen
+teams	LASK vs. SK RAPID
+info	Admiral Bundesliga Grunddurchgang 19. Runde LASK vs. SK RAPID am 23.02.2025
+stadion	Raiffeisen Arena Linz
+typ	Admiral Bundesliga Grunddurchgang 19. Runde
+datum	23.02.2025
+// Team
+h	LASK
+ht	Markus Schopp
+h1	Tobias Okiki Lawal
+h2	George Bello
+h7	Samuel Oluwabukunmi Adeniran
+h11	Maximilian Entrup
+h14	Valon Berisha
+h18	Branko Jovicic
+h21	Ivan Ljubic
+h26	Hrvoje Smolcic
+h27	Christoph Lang
+h30	Sascha Horvath
+h48	Modou Keba Cisse
+h33	Tobias Schützenauer
+h6	Melayro Bogarde
+h9	Krystof Danek
+h35	Marco Alessandro Sulzner
+h41	Emmanuel Michael
+h45	Enis Safin
+// Team
+ask	LASK
+askt	Markus Schopp
+ask1	Tobias Okiki Lawal
+ask2	George Bello
+ask7	Samuel Oluwabukunmi Adeniran
+ask11	Maximilian Entrup
+ask14	Valon Berisha
+ask18	Branko Jovicic
+ask21	Ivan Ljubic
+ask26	Hrvoje Smolcic
+ask27	Christoph Lang
+ask30	Sascha Horvath
+ask48	Modou Keba Cisse
+ask33	Tobias Schützenauer
+ask6	Melayro Bogarde
+ask9	Krystof Danek
+ask35	Marco Alessandro Sulzner
+ask41	Emmanuel Michael
+ask45	Enis Safin
+// Team
+a	SK RAPID
+at	Robert Klauss
+a25	Paul Gartler
+a6	Serge-philippe Raux-yao
+a8	Lukas Grgic
+a18	Matthias Seidl
+a21	Louis Schaub
+a22	Isak Alexander Jansson
+a23	Jonas Antonius Auer
+a28	Moritz Oswald
+a55	Nenad Cvetkovic
+a77	Bendeguz Bence Bolla
+a99	Ercan Kara
+a32	Christoph Haas
+a4	Jakob Maximilian Schöller
+a16	Tobias Borchgrevink Borkeeiet
+a20	Kouadio Guy Ange Ahoussou
+a27	Noah Bischof
+a48	Nikolaus Wurmbrand
+// Team
+scr	SK RAPID
+scrt	Robert Klauss
+scr25	Paul Gartler
+scr6	Serge-philippe Raux-yao
+scr8	Lukas Grgic
+scr18	Matthias Seidl
+scr21	Louis Schaub
+scr22	Isak Alexander Jansson
+scr23	Jonas Antonius Auer
+scr28	Moritz Oswald
+scr55	Nenad Cvetkovic
+scr77	Bendeguz Bence Bolla
+scr99	Ercan Kara
+scr32	Christoph Haas
+scr4	Jakob Maximilian Schöller
+scr16	Tobias Borchgrevink Borkeeiet
+scr20	Kouadio Guy Ange Ahoussou
+scr27	Noah Bischof
+scr48	Nikolaus Wurmbrand
+// Officials
+r1	Christian-petru Ciochirca
+r2	Michael Obritzberger
+r3	Mattias Hartl
+r4	Achim Untergasser
+var1	Alan Kijas
+var2	Maximilian Weiss

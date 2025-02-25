@@ -1,0 +1,31 @@
+# Ignore Gradle cache and temporary files
+.gradle/
+gradle/wrapper
+
+# Ignore build outputs for all modules
+**/build/
+build/
+
+# Ignore IDE-specific files
+*.iml
+.idea/
+*.log
+
+
+# Ignore local environment files
+.env
+*.env
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Ignore OS-specific files
+*.DS_Store
+*.swp
+
+# Ignore not build relevant files
+*.md
+.gitignore
+**/testout

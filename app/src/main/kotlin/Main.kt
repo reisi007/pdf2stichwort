@@ -7,8 +7,8 @@ import pictures.reisinger.pdfextractor.extractor.toPhotomachanics
 
 fun main() {
     println("Watching for emails")
-    checkForMails(keepOpen = true) { (mail, inputStream) ->
-        val address = Address.value
+    val address = Address.value
+    checkForMails(address.keys, keepOpen = true) { (mail, inputStream) ->
         val emailInfo = when (mail) {
             "presse@lask.at" -> {
                 val info = extractBundesligaPdf(inputStream)

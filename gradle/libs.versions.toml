@@ -11,6 +11,7 @@ pdfbox = "3.0.4"
 angusMailVersion = "2.0.3"
 angusActivationVersion = "2.0.0"
 shadowJar = "8.3.6"
+assertk = "0.28.1"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -20,6 +21,7 @@ kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", 
 pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "pdfbox" }
 angusMail = { module = "org.eclipse.angus:angus-mail", version.ref = "angusMailVersion" }
 angusActivition = { module = "org.eclipse.angus:angus-activation", version.ref = "angusActivationVersion" }
+assertk = { module = "com.willowtreeapps.assertk:assertk-jvm", version.ref = "assertk" }
 
 
 
@@ -27,6 +29,7 @@ angusActivition = { module = "org.eclipse.angus:angus-activation", version.ref =
 [bundles]
 kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
 angus = ["angusMail", "angusActivition"]
+testing = ["assertk"]
 
 [plugins]
 kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

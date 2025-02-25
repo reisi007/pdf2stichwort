@@ -3,7 +3,7 @@ LABEL org.opencontainers.image.source https://github.com/reisi007/pdf2stichwort
 FROM gradle:8.10-jdk21-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN gradle shadowJar -x test --no-daemon
+RUN gradle shadowJar --no-daemon
 
 # ---- Runtime Stage ----
 FROM amazoncorretto:21-alpine

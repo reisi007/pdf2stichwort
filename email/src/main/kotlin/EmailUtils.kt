@@ -30,7 +30,11 @@ fun sendMail(@MimeMessageExtensions action: MimeMessage.() -> Unit) {
     println("Sent ${message.subject}")
 }
 
-fun checkForMails(keepOpen: Boolean = true, foundAction: (Pair<String, InputStream>) -> Boolean) {
+fun checkForMails(
+    allowedEmails: Collection<String>,
+    keepOpen: Boolean = true,
+    foundAction: (Pair<String, InputStream>) -> Boolean
+) {
     val host = System.getenv("EMAIL_HOST")
     val port = System.getenv("EMAIL_IMAP_PORT")
     val user = System.getenv("EMAIL_USER")
@@ -54,11 +58,11 @@ fun checkForMails(keepOpen: Boolean = true, foundAction: (Pair<String, InputStre
             inbox.open(Folder.READ_WRITE)
             trash.open(Folder.READ_WRITE)
             val messages = inbox.messages
-            handleMessage(messages, foundAction, inbox, trash)
+            handleMessage(messages, allowedEmails, inbox, trash, foundAction)
 
             inbox.addMessageCountListener(object : MessageCountListener {
                 override fun messagesAdded(e: MessageCountEvent) {
-                    handleMessage(e.messages, foundAction, inbox, trash)
+                    handleMessage(e.messages, allowedEmails, inbox, trash, foundAction)
                 }
 
                 override fun messagesRemoved(e: MessageCountEvent) {
@@ -79,11 +83,12 @@ fun checkForMails(keepOpen: Boolean = true, foundAction: (Pair<String, InputStre
 
 private fun handleMessage(
     messages: Array<Message>,
-    foundAction: (Pair<String, InputStream>) -> Boolean,
+    allowedEmails: Collection<String>,
     sourceFolder: Folder,
-    trashFolder: Folder
+    trashFolder: Folder,
+    foundAction: (Pair<String, InputStream>) -> Boolean,
 ) {
-    filterMessages(messages)
+    filterMessages(messages, allowedEmails)
         .forEach { (message, from, inputStream) ->
             println("Found mail $from")
             val shouldDelete = foundAction(from to inputStream)
@@ -94,7 +99,10 @@ private fun handleMessage(
         }
 }
 
-fun filterMessages(messages: Array<Message>): Sequence<Triple<Message, String, InputStream>> {
+fun filterMessages(
+    messages: Array<Message>,
+    allowedEmails: Collection<String>
+): Sequence<Triple<Message, String, InputStream>> {
     return messages.asSequence()
         .mapNotNull { message -> message as? IMAPMessage }
         .mapNotNull { imapMessage ->
@@ -105,7 +113,7 @@ fun filterMessages(messages: Array<Message>): Sequence<Triple<Message, String, I
             Triple(imapMessage, internetAddress.address, multipart)
 
         }
-        .filter { (_, mail) -> AllowedEmails.emails.contains(mail) }
+        .filter { (_, mail) -> allowedEmails.contains(mail) }
         .mapNotNull { (message, mail, multipart) ->
             val pdfAttachments = (0 until multipart.count).map {
                 multipart.getBodyPart(it)

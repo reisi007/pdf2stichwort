@@ -6,4 +6,5 @@ plugins {
 dependencies {
     implementation(libs.pdfbox)
     testImplementation(kotlin("test"))
+    testImplementation(libs.bundles.testing)
 }

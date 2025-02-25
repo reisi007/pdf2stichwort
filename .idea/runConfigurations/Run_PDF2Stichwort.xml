@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run PDF2Stichwort" type="JetRunConfigurationType">
+    <option name="MAIN_CLASS_NAME" value="pictures.reisinger.pdfextractor.app.MainKt" />
+    <module name="pdf2stichwort.app.main" />
+    <shortenClasspath name="NONE" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

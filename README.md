@@ -1,5 +1,7 @@
 # pdf2stichwort
 
+[Docker image] (https://github.com/users/reisi007/packages/container/package/pdf2stichwort)
+
 This project uses [Gradle](https://gradle.org/).
 To build and run the application, use the *Gradle* tool window by clicking the Gradle icon in the right-hand toolbar,
 or run it directly from the terminal:

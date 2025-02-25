@@ -1,3 +1,4 @@
+LABEL org.opencontainers.image.source https://github.com/reisi007/pdf2stichwort
 # ---- Build Stage ----
 FROM gradle:8.10-jdk21-alpine AS builder
 WORKDIR /app

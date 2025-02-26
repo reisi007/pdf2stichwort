@@ -8,7 +8,7 @@ import java.io.InputStream
 
 fun extractBundesligaPdf(input: InputStream) = extractFromPdf(input, "Admiral Bundesliga")
 
-private fun extractFromPdf(input: InputStream, league: String): SoccerInfo {
+internal fun extractFromPdf(input: InputStream, league: String): SoccerInfo {
     val pdf = Loader.loadPDF(RandomAccessReadBuffer(input))
     val page = pdf.getPage(0)
     val mediaBox = page.mediaBox
@@ -34,11 +34,11 @@ private fun extractFromPdf(input: InputStream, league: String): SoccerInfo {
 }
 
 
-private fun extractInfo(raw: List<String>, league: String): GeneralInfo {
+internal fun extractInfo(raw: List<String>, league: String): GeneralInfo {
     val date = raw[4]
     val arena = raw[3]
     return GeneralInfo(
-        "$league ${raw[0].fixedCase} ${raw[1].fixedCase}",
+        "$league ${raw[0].fixedCase()} ${raw[1].fixedCase()}",
         date,
         arena
     )
@@ -46,27 +46,27 @@ private fun extractInfo(raw: List<String>, league: String): GeneralInfo {
 
 private val EXTRACT_PLAYER = Regex("""^(\d+)\s(.+?)(\s[TC]{1,2})?${'$'}""")
 
-private fun extractTeam(raw: List<String>): TeamInfo {
+internal fun extractTeam(raw: List<String>): TeamInfo {
     val name = raw.first()
-    val trainer = raw.last().substringAfter("TR").trim().fixedCase
+    val trainer = raw.last().substringAfter("TR").trim().fixedCase(force = true)
     val players = raw.subList(1, raw.size - 2).associate {
         val (_, number, player) = EXTRACT_PLAYER.matchEntire(it)?.groupValues
             ?: throw IllegalStateException("Cannot extract player from $it")
-        number.toInt() to player.fixedCase
+        number.toInt() to player.fixedCase(force = true)
     }
 
     return TeamInfo(players, trainer, name)
 }
 
-private fun extractOfficial(raw: List<String>): OfficialInfo {
-    val referee = raw[0].substringAfter(":").trim().fixedCase
-    val assistants = raw[1].substringAfter(":")
+internal fun extractOfficial(raw: List<String>): OfficialInfo {
+    val referee = raw[0].substringAfter("TR", ":").trim().fixedCase(force = true)
+    val assistants = raw[1].substringAfter("TR", ":")
         .split(",")
-        .map { it.trim().fixedCase }
-    val fourth = raw[2].substringAfter(":").trim().fixedCase
-    val (`var`, avar) = raw[3].substringAfter(":")
+        .map { it.trim().fixedCase(force = true) }
+    val fourth = raw[2].substringAfter("TR", ":").trim().fixedCase(force = true)
+    val (`var`, avar) = raw[3].substringAfter("TR", ":")
         .split("/")
-        .map { it.trim().fixedCase }
+        .map { it.trim().fixedCase(force = true) }
     return OfficialInfo(
         referee,
         assistants,

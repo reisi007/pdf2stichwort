@@ -22,10 +22,11 @@ class FixedCaseTests {
                 argsOf("GRUNDDURCHGANG", false, "Grunddurchgang"),
                 argsOf("RIED IM INNKREIS", false, "Ried im Innkreis"),
                 argsOf("UEFA Nations League", false, "UEFA Nations League"),
+                argsOf("ORT IM INNKREIS", false, "Ort im Innkreis"),
                 argsOf("Vorname NACH-NAME", true, "Vorname Nach-Name"),
                 argsOf("Some D'ANGELO", true, "Some D'Angelo"),
                 argsOf("Thomas MÜLLER", true, "Thomas Müller"),
-                argsOf("Kouadio Guy Ange AHOUSSOU", true, "Kouadio Guy Ange Ahoussou")
+                argsOf("Kouadio Guy Ange AHOUSSOU", true, "Kouadio Guy Ange Ahoussou"),
             )
         }
 

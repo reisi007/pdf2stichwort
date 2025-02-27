@@ -6,10 +6,10 @@ internal fun String.fixedCase(force: Boolean = false): String {
     if (force || this == uppercase()) {
         return lowercase()
             .split(" ")
-            .map {
-                if (!force && it.length <= 3)
-                    return@map it
-                it.replaceFirstChar { char -> char.uppercase() }
+            .mapIndexed { idx, word ->
+                if (!force && word.length <= 3 && idx > 0)
+                    return@mapIndexed word
+                word.replaceFirstChar { char -> char.uppercase() }
                     .replace(regex) { match ->
                         val (_, delimiter, char) = match.groupValues
                         delimiter + char.uppercase()

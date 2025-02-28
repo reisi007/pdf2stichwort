@@ -3,13 +3,12 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-kotlin = "2.0.21"
-kotlinxDatetime = "0.6.1"
-kotlinxSerializationJSON = "1.7.2"
-kotlinxCoroutines = "1.8.1"
+kotlin = "2.1.10"
+kotlinxDatetime = "0.6.2"
+kotlinxSerializationJSON = "1.8.0"
 pdfbox = "3.0.4"
 angusMailVersion = "2.0.3"
-angusActivationVersion = "2.0.0"
+angusActivationVersion = "2.0.2"
 shadowJar = "8.3.6"
 assertk = "0.28.1"
 logback = "1.5.17"
@@ -19,7 +18,6 @@ slf4j = "2.0.17"
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
-kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "pdfbox" }
 angusMail = { module = "org.eclipse.angus:angus-mail", version.ref = "angusMailVersion" }
 angusActivition = { module = "org.eclipse.angus:angus-activation", version.ref = "angusActivationVersion" }
@@ -30,7 +28,7 @@ slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 # Libraries can be bundled together for easier import
 [bundles]
-kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
+kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization"]
 angus = ["angusMail", "angusActivition"]
 testing = ["assertk", "junitJupiterParams"]
 

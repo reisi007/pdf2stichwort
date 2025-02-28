@@ -1,5 +1,10 @@
 package pictures.reisinger.pdfextractor.extractor
 
+/**
+ * Regex to find a non-letter followed by a letter.
+ *
+ * This is used to uppercase the letter after the non-letter.
+ */
 val regex = Regex("""([^a-zA-z\u00C0-\u017FA])(.)""")
 
 internal fun String.fixedCase(force: Boolean = false): String {
@@ -21,12 +26,5 @@ internal fun String.fixedCase(force: Boolean = false): String {
 
 internal fun String.splitLines(): List<String> = split("\r\n").filter { it.isNotBlank() }
 
-internal fun String.substringAfter(vararg items: String): String {
-    var final = this
-
-    items.forEach { item ->
-        final = final.substringAfter(item, missingDelimiterValue = final)
-    }
-
-    return final.trimStart()
-}
+internal fun String.substringAfter(vararg items: String): String =
+    items.fold(this) { acc, item -> acc.substringAfter(item, missingDelimiterValue = acc) }.trimStart()

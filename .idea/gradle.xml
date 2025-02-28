@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/email" />
             <option value="$PROJECT_DIR$/extractor" />
+            <option value="$PROJECT_DIR$/logging" />
           </set>
         </option>
       </GradleProjectSettings>

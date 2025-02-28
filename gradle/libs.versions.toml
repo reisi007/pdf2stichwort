@@ -12,6 +12,8 @@ angusMailVersion = "2.0.3"
 angusActivationVersion = "2.0.0"
 shadowJar = "8.3.6"
 assertk = "0.28.1"
+logback = "1.5.17"
+slf4j = "2.0.17"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -23,6 +25,8 @@ angusMail = { module = "org.eclipse.angus:angus-mail", version.ref = "angusMailV
 angusActivition = { module = "org.eclipse.angus:angus-activation", version.ref = "angusActivationVersion" }
 assertk = { module = "com.willowtreeapps.assertk:assertk-jvm", version.ref = "assertk" }
 junitJupiterParams = { module = "org.junit.jupiter:junit-jupiter-params" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 # Libraries can be bundled together for easier import
 [bundles]

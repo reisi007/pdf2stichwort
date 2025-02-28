@@ -1,8 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run PDF2Stichwort" type="JetRunConfigurationType">
-    <option name="MAIN_CLASS_NAME" value="pictures.reisinger.pdfextractor.app.MainKt" />
+    <option name="MAIN_CLASS_NAME" value="pictures.reisinger.pdfextractor.app.Main" />
     <module name="pdf2stichwort.app.main" />
     <shortenClasspath name="NONE" />
+    <option name="VM_PARAMETERS" value="-Dlogback.configurationFile=logback-debug.xml" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
     <method v="2">
       <option name="Make" enabled="true" />

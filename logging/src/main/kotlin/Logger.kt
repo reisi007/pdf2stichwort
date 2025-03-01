@@ -15,4 +15,8 @@ class Logger internal constructor(private val LOGGER: Logger) {
     fun trace(text: String) {
         LOGGER.trace(text)
     }
+
+    fun error(e: Throwable, text: String) {
+        LOGGER.error(text, e)
+    }
 }

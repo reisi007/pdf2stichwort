@@ -11,6 +11,15 @@ import pictures.reisinger.pdfextractor.logging.LOGGER
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
+        try {
+            performAction()
+        } catch (e: Exception) {
+            LOGGER.error(e, "An unhandled exception occured")
+        }
+
+    }
+
+    private fun performAction() {
         LOGGER.info("Watching for emails")
         val address = Address.value
         checkForMails(address.keys, keepOpen = true) { (mail, inputStream) ->
